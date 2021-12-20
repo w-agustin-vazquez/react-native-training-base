@@ -9,7 +9,10 @@
  * @format
  */
 
+import { BOOKS_MOCK } from '@constants/mockBooks';
 import React from 'react';
+import Reactotron from 'reactotron-react-native'
+
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar } from 'react-native';
 import {
   Header,
@@ -20,6 +23,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
+  Reactotron.log?.(JSON.stringify(BOOKS_MOCK));
   return (
     <>
       <StatusBar barStyle="dark-content" />
