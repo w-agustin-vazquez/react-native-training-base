@@ -12,52 +12,52 @@ export enum textVariants {
   p5 = 'P5',
 }
 
-const TEXT_WEIGHTS: Record<string, TextStyle["fontWeight"]> = {
-  light: '300',
-  normal: 'normal',
-  semiBold: '500',
+const FONTS = {
+  light: 'SFUIText-Light',
+  lightItalic: 'SFUIText-LightItalic',
+  normal: 'SFUIText-Regular',
+  semiBold: 'SFUIText-Semibold'
 }
 
 export const TEXT_STYLES: Record<textVariants, TextStyle> = {
   [textVariants.h1]: {
     fontSize: 24,
     lineHeight: 28,
-    fontWeight: TEXT_WEIGHTS.semiBold
+    fontFamily: FONTS.semiBold
   },
   [textVariants.h2]: {
     fontSize: 17,
     lineHeight: 20,
-    fontWeight: TEXT_WEIGHTS.normal
+    fontFamily: FONTS.normal
   },
   [textVariants.h3]: {
     fontSize: 17,
     lineHeight: 20,
-    fontWeight: TEXT_WEIGHTS.semiBold
+    fontFamily: FONTS.semiBold
   },
   [textVariants.h4]: {
     fontSize: 15,
     lineHeight: 17,
-    fontWeight: TEXT_WEIGHTS.semiBold
+    fontFamily: FONTS.semiBold
   },
   [textVariants.p1]: {
     fontSize: 15,
     lineHeight: 17,
-    fontWeight: TEXT_WEIGHTS.normal
+    fontFamily: FONTS.normal
   },
   [textVariants.p2]: {
     fontSize: 12,
     lineHeight: 14,
-    fontWeight: TEXT_WEIGHTS.semiBold
+    fontFamily: FONTS.semiBold
   },
   [textVariants.p3]: {
     fontSize: 10,
     lineHeight: 12,
-    fontWeight: TEXT_WEIGHTS.normal
+    fontFamily: FONTS.normal
   },
   [textVariants.p5]: {
     fontSize: 15,
     lineHeight: 17,
-    fontWeight: TEXT_WEIGHTS.light,
-    fontStyle: 'italic'
+    fontFamily: FONTS.lightItalic
   },
 }
