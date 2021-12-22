@@ -1,22 +1,17 @@
 import React from 'react';
-import { Image, ImageStyle, View, ViewStyle } from 'react-native';
+import { Image, View } from 'react-native';
 
-import GenericText from '@app/components/GenericText';
 import { IBook } from '@interfaces/book';
+import GenericText from '@app/components/GenericText';
 import { textVariants } from '@app/components/GenericText/constants';
-import { AppColors } from '@constants/colors';
 
-const IMG_STYLES: ImageStyle = {
-  width: 40,
-  height: 60,
-  backgroundColor: AppColors.iron
-};
+import { styles } from './styles';
 
 function BookImage({ imageUrl }: { imageUrl: string | null }) {
   return imageUrl ? (
-    <Image style={IMG_STYLES} source={{ uri: imageUrl }} />
+    <Image style={styles.img} source={{ uri: imageUrl }} />
   ) : (
-    <View style={IMG_STYLES} />
+    <View style={styles.img} />
   );
 }
 
@@ -26,28 +21,12 @@ interface Props {
   author: IBook['author'];
 }
 
-const BOOK_STYLES: ViewStyle = {
-  flexDirection: 'row',
-  padding: 15,
-  paddingLeft: 30,
-  paddingRight: 30,
-  margin: 20,
-  marginTop: 10,
-  marginBottom: 10,
-  borderRadius: 8,
-  backgroundColor: AppColors.white
-}
-
-const TEXT_CONTAINER_STYLES = {
-  width: '70%',
-  marginLeft: 20
-}
 
 function Book({ imageUrl, title, author }: Props) {
   return (
-    <View style={BOOK_STYLES}>
+    <View style={styles.book}>
       <BookImage imageUrl={imageUrl} />
-      <View style={TEXT_CONTAINER_STYLES}>
+      <View style={styles.textContainer}>
         <GenericText variant={textVariants.h3}>{title}</GenericText>
         <GenericText>{author}</GenericText>
       </View>

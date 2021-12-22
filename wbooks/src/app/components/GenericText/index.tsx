@@ -1,7 +1,8 @@
 import React from 'react'
 import { Text } from 'react-native'
 
-import { textVariants, TEXT_STYLES } from './constants'
+import { textVariants } from './constants'
+import { styles } from './styles'
 
 interface Props {
   children: string
@@ -10,7 +11,7 @@ interface Props {
 
 function GenericText({ children, variant = textVariants.p1 }: Props) {
   return (
-    <Text style={TEXT_STYLES[variant]}>
+    <Text style={styles[variant]}>
       {children}
     </Text>
   )
