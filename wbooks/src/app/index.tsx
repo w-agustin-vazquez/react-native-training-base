@@ -1,3 +1,4 @@
+import { AppColors } from '@constants/colors';
 import React from 'react';
 
 import { SafeAreaView, ScrollView, StatusBar } from 'react-native';
@@ -8,9 +9,10 @@ const App = () => {
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <ScrollView contentInsetAdjustmentBehavior="automatic">
-          <Library />
-        </ScrollView>
+        {/* TODO: ScrollView will be removed? review in Library view card */}
+        {/* <ScrollView contentInsetAdjustmentBehavior="automatic"> */}
+        <Library />
+        {/* </ScrollView> */}
       </SafeAreaView>
     </>
   );

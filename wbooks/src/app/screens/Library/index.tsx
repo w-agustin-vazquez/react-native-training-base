@@ -6,6 +6,7 @@ import GenericText from '@app/components/GenericText';
 import { textVariants } from '@app/components/GenericText/constants';
 
 import Book from './components/Book';
+import { AppColors } from '@constants/colors';
 
 function Library() {
   return (
@@ -20,9 +21,12 @@ function Library() {
       <GenericText variant={textVariants.p5}>My generic text with P5</GenericText>
       <FlatList
         data={BOOKS_MOCK}
-        renderItem={({ item: { imageUrl, title, author, id } }) => (
-          <Book key={id} imageUrl={imageUrl} title={title} author={author} />
+        // TODO: Move this to some layout component in card of library view
+        style={{ backgroundColor: AppColors.polar, paddingTop: 20, paddingBottom: 20 }}
+        renderItem={({ item: { imageUrl, title, author } }) => (
+          <Book imageUrl={imageUrl} title={title} author={author} />
         )}
+        keyExtractor={({ id }) => id.toString()}
       />
     </View>
   );
