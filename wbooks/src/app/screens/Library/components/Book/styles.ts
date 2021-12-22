@@ -21,5 +21,8 @@ export const styles = StyleSheet.create({
   textContainer: {
     width: '70%',
     marginLeft: 20
+  },
+  title: {
+    marginBottom: 4
   }
 });

@@ -27,7 +27,7 @@ function Book({ imageUrl, title, author }: Props) {
     <View style={styles.book}>
       <BookImage imageUrl={imageUrl} />
       <View style={styles.textContainer}>
-        <GenericText variant={textVariants.h3}>{title}</GenericText>
+        <GenericText variant={textVariants.h3} style={styles.title}>{title}</GenericText>
         <GenericText>{author}</GenericText>
       </View>
     </View>
