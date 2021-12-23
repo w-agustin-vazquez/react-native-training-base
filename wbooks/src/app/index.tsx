@@ -1,21 +1,10 @@
-import { AppColors } from '@constants/colors';
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 
 import { SafeAreaView, ScrollView, StatusBar } from 'react-native';
+import Router from './components/Router';
 import Library from './screens/Library';
 
-const App = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        {/* TODO: ScrollView will be removed? review in Library view card */}
-        {/* <ScrollView contentInsetAdjustmentBehavior="automatic"> */}
-        <Library />
-        {/* </ScrollView> */}
-      </SafeAreaView>
-    </>
-  );
-};
+const App = () => <Router />
 
 export default App;

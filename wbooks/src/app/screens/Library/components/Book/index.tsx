@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View } from 'react-native';
+import { Image, Pressable, View } from 'react-native';
 
 import { IBook } from '@interfaces/book';
 import GenericText from '@app/components/GenericText';
@@ -19,18 +19,19 @@ interface Props {
   imageUrl: IBook['imageUrl'];
   title: IBook['title'];
   author: IBook['author'];
+  handlePress: () => void;
 }
 
 
-function Book({ imageUrl, title, author }: Props) {
+function Book({ imageUrl, title, author, handlePress }: Props) {
   return (
-    <View style={styles.book}>
+    <Pressable style={styles.book} onPress={handlePress}>
       <BookImage imageUrl={imageUrl} />
       <View style={styles.textContainer}>
         <GenericText variant={textVariants.h3} style={styles.title}>{title}</GenericText>
         <GenericText>{author}</GenericText>
       </View>
-    </View>
+    </Pressable>
   );
 }
 

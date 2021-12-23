@@ -1,16 +1,15 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import { Text, TextStyle } from 'react-native'
 
 import { textVariants } from './constants'
 import { styles } from './styles'
 
 interface Props {
-  children: string;
   style?: TextStyle;
   variant?: textVariants;
 }
 
-function GenericText({ children, style, variant = textVariants.p1 }: Props) {
+function GenericText({ children, style, variant = textVariants.p1 }: PropsWithChildren<Props>) {
   const textStyle = {
     ...styles[variant],
     ...style
