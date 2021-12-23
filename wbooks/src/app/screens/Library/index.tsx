@@ -1,10 +1,6 @@
 import React from 'react';
 import { FlatList, ListRenderItemInfo, View } from 'react-native';
-import {
-  Route,
-  routeNames
-} from '@app/components/Router/constants';
-
+import { Route, routeNames } from '@app/components/Router/constants';
 import { BOOKS_MOCK } from '@constants/mockBooks';
 import { IBook } from '@interfaces/book';
 
@@ -12,9 +8,7 @@ import Book from './components/Book';
 import { styles } from './styles';
 
 function Library({ navigation }: Route<routeNames.library>) {
-  const handleRenderItem = ({
-    item: { imageUrl, title, author, id }
-  }: ListRenderItemInfo<IBook>) => (
+  const handleRenderItem = ({ item: { imageUrl, title, author, id } }: ListRenderItemInfo<IBook>) => (
     <Book
       imageUrl={imageUrl}
       title={title}

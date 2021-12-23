@@ -1,7 +1,7 @@
-import GenericText from '@app/components/GenericText'
-import { Route, routeNames } from '@app/components/Router/constants'
-import React from 'react'
-import { View } from 'react-native'
+import GenericText from '@app/components/GenericText';
+import { Route, routeNames } from '@app/components/Router/constants';
+import React from 'react';
+import { View } from 'react-native';
 
 function BookDetail({ route }: Route<routeNames.bookDetail>) {
   const { id } = route.params;
@@ -10,7 +10,7 @@ function BookDetail({ route }: Route<routeNames.bookDetail>) {
     <View>
       <GenericText>BookDetail: {id}</GenericText>
     </View>
-  )
+  );
 }
 
-export default BookDetail
+export default BookDetail;

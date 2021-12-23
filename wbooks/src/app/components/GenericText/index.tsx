@@ -1,5 +1,5 @@
-import React, { PropsWithChildren } from 'react'
-import { Text, TextStyle } from 'react-native'
+import React, { PropsWithChildren } from 'react';
+import { Text, TextStyle } from 'react-native';
 
 import { textVariants } from './constants';
 import { styles } from './styles';

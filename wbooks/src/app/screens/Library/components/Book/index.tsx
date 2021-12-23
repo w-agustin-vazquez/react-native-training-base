@@ -1,6 +1,5 @@
 import React from 'react';
 import { Pressable, View } from 'react-native';
-
 import { IBook } from '@interfaces/book';
 import GenericText from '@app/components/GenericText';
 import { textVariants } from '@app/components/GenericText/constants';
