@@ -1,6 +1,7 @@
-import { AppColors } from "@constants/colors";
-import { StyleSheet } from "react-native";
-import { FONTS, textVariants } from "./constants";
+import { AppColors } from '@constants/colors';
+import { StyleSheet } from 'react-native';
+
+import { FONTS, textVariants } from './constants';
 
 export const styles = StyleSheet.create({
   [textVariants.h1]: {
@@ -50,5 +51,5 @@ export const styles = StyleSheet.create({
     lineHeight: 17,
     fontFamily: FONTS.lightItalic,
     color: AppColors.black
-  },
+  }
 });

@@ -8,4 +8,4 @@ export const AppColors = {
   iron: '#CFD0D2',
   polar: '#EAF6FA',
   white: '#FFF'
-}
+};

@@ -4,8 +4,8 @@
 
 import { AppRegistry } from 'react-native';
 
-if(__DEV__) {
-  import('./ReactotronConfig').then(() => console.log('Reactotron Configured'))
+if (__DEV__) {
+  import('./ReactotronConfig').then(() => console.log('Reactotron Configured'));
 }
 
 import App from './App';
