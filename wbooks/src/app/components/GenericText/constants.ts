@@ -7,7 +7,7 @@ export enum textVariants {
   p1 = 'P1',
   p2 = 'P2',
   p3 = 'P3',
-  p5 = 'P5',
+  p5 = 'P5'
 }
 
 export const FONTS = {
@@ -16,4 +16,4 @@ export const FONTS = {
   normal: 'SFUIText-Regular',
   semiBold: 'SFUIText-Semibold',
   bold: 'SFUIText-Bold'
-}
+};

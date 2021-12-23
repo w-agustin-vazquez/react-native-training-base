@@ -1,7 +1,6 @@
-import { AppColors } from '@constants/colors';
 import React from 'react';
+import { SafeAreaView, StatusBar } from 'react-native';
 
-import { SafeAreaView, ScrollView, StatusBar } from 'react-native';
 import Library from './screens/Library';
 
 const App = () => {
