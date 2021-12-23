@@ -1,5 +1,6 @@
-import { AppColors } from '@constants/colors';
 import { StyleSheet } from 'react-native';
+
+import { AppColors } from '@constants/colors';
 
 import { FONTS, textVariants } from './constants';
 
