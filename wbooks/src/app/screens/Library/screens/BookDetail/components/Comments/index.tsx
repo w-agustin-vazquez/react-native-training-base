@@ -1,10 +1,15 @@
 import GenericText from '@app/components/GenericText'
+import { IComment } from '@interfaces/comment'
 import React from 'react'
 
-function Comments() {
+interface Props {
+  comments: IComment[]
+}
+
+function Comments({ comments }: Props) {
   return (
     <GenericText>
-      Comments
+      Comments {comments.length}
     </GenericText>
   )
 }

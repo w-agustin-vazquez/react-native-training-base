@@ -1,4 +1,6 @@
-export const COMMENTS_MOCK = [
+import { IComment } from "@interfaces/comment";
+
+export const COMMENTS_MOCK: IComment[] = [
   {
     id: 0,
     author: 'Emmie Thiel',

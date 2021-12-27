@@ -9,12 +9,12 @@ import Book from './components/Book';
 import { styles } from './styles';
 
 function Library({ navigation }: Route<routeNames.library>) {
-  const handleRenderItem = ({ item: { imageUrl, title, author, id } }: ListRenderItemInfo<IBook>) => (
+  const handleRenderItem = ({ item }: ListRenderItemInfo<IBook>) => (
     <Book
-      imageUrl={imageUrl}
-      title={title}
-      author={author}
-      handlePress={() => navigation.navigate(routeNames.bookDetail, { id })}
+      imageUrl={item.imageUrl}
+      title={item.title}
+      author={item.author}
+      handlePress={() => navigation.navigate(routeNames.bookDetail, { book: item })}
     />
   );
 
@@ -23,7 +23,7 @@ function Library({ navigation }: Route<routeNames.library>) {
   return (
     <View>
       <FlatList
-        data={BOOKS_MOCK as IBook[]}
+        data={BOOKS_MOCK}
         // TODO: Move this to some layout component in card of library view
         style={styles.list}
         renderItem={handleRenderItem}
