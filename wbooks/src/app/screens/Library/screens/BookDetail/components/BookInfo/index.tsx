@@ -4,7 +4,7 @@ import Button from '@app/components/Button';
 import { buttonVariants } from '@app/components/Button/constants';
 import GenericText from '@app/components/GenericText';
 import { IBook } from '@interfaces/book';
-import BookImage from '@app/screens/Library/components/Book/components/BookImage';
+import BookImage from '@app/components/BookImage';
 import Card from '@app/components/Card';
 
 import { styles } from './styles';

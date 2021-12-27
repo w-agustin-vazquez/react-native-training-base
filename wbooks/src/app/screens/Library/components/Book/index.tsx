@@ -5,7 +5,7 @@ import GenericText from '@app/components/GenericText';
 import { textVariants } from '@app/components/GenericText/constants';
 
 import { styles } from './styles';
-import BookImage from './components/BookImage';
+import BookImage from '../../../../components/BookImage';
 import Card from '@app/components/Card';
 
 interface Props {
