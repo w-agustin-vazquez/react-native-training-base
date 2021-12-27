@@ -5,7 +5,7 @@ import { BOOKS_MOCK } from '@constants/mockBooks';
 import { IBook } from '@interfaces/book';
 
 import Book from './components/Book';
-import { styles } from './styles';
+import Layout from '@app/components/Layout';
 
 function Library({ navigation }: Route<routeNames.library>) {
   const handleRenderItem = ({ item }: ListRenderItemInfo<IBook>) => (
@@ -20,15 +20,13 @@ function Library({ navigation }: Route<routeNames.library>) {
   const handleKeyExtractor = ({ id }: IBook) => id.toString();
 
   return (
-    <View>
+    <Layout>
       <FlatList
         data={BOOKS_MOCK}
-        // TODO: Move this to some layout component in card of library view
-        style={styles.list}
         renderItem={handleRenderItem}
         keyExtractor={handleKeyExtractor}
       />
-    </View>
+    </Layout>
   );
 }
 

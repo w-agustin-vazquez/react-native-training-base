@@ -4,6 +4,10 @@ import Button from '@app/components/Button';
 import { buttonVariants } from '@app/components/Button/constants';
 import GenericText from '@app/components/GenericText';
 import { IBook } from '@interfaces/book';
+import BookImage from '@app/screens/Library/components/Book/components/BookImage';
+import Card from '@app/components/Card';
+
+import { styles } from './styles';
 
 interface Props {
   book: IBook;
@@ -14,9 +18,8 @@ function BookInfo({ book }: Props) {
   const handleRent = () => console.warn('handleRent');
 
   return (
-    <View>
-      {/* TODO: Use nulleable images from BookImage */}
-      {book.imageUrl && <Image source={{ uri: book.imageUrl }} />}
+    <Card>
+      <BookImage imageUrl={book.imageUrl} />
       <View>
         <GenericText>{book.title}</GenericText>
         <GenericText>Available</GenericText>
@@ -28,7 +31,7 @@ function BookInfo({ book }: Props) {
         <Button title="ADD TO WISHLIST" handlePress={handleAddWishlist} variant={buttonVariants.secondary} />
         <Button title="RENT" handlePress={handleRent} />
       </View>
-    </View>
+    </Card>
   );
 }
 
