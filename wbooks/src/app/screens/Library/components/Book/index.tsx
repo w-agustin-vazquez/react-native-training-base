@@ -3,10 +3,11 @@ import { View } from 'react-native';
 import { IBook } from '@interfaces/book';
 import GenericText from '@app/components/GenericText';
 import { textVariants } from '@app/components/GenericText/constants';
+import Card from '@app/components/Card';
+
+import BookImage from '../../../../components/BookImage';
 
 import { styles } from './styles';
-import BookImage from '../../../../components/BookImage';
-import Card from '@app/components/Card';
 
 interface Props {
   imageUrl: IBook['imageUrl'];

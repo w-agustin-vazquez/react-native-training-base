@@ -6,9 +6,9 @@ import GenericText from '@app/components/GenericText';
 import { IBook } from '@interfaces/book';
 import BookImage from '@app/components/BookImage';
 import Card from '@app/components/Card';
+import { textVariants } from '@app/components/GenericText/constants';
 
 import { styles } from './styles';
-import { textVariants } from '@app/components/GenericText/constants';
 import { LABELS } from './constants';
 
 interface Props {
@@ -24,9 +24,7 @@ function BookInfo({ book }: Props) {
       <BookImage style={styles.image} imageUrl={book.imageUrl} />
       <View style={styles.data}>
         <GenericText variant={textVariants.h1}>{book.title}</GenericText>
-        <GenericText style={styles.status}>
-          {LABELS.statusAvailable}
-        </GenericText>
+        <GenericText style={styles.status}>{LABELS.statusAvailable}</GenericText>
         <GenericText>{book.author}</GenericText>
         <GenericText>{book.year}</GenericText>
         <GenericText>{book.genre}</GenericText>
@@ -37,9 +35,7 @@ function BookInfo({ book }: Props) {
         handlePress={handleAddWishlist}
         variant={buttonVariants.secondary}
       />
-      <Button
-        style={styles.button}
-        title={LABELS.rent} handlePress={handleRent} />
+      <Button style={styles.button} title={LABELS.rent} handlePress={handleRent} />
     </Card>
   );
 }

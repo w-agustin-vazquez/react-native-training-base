@@ -1,6 +1,5 @@
 import React from 'react';
-import { ImageStyle } from 'react-native';
-import { Image, View } from 'react-native';
+import { ImageStyle, Image, View } from 'react-native';
 
 import { styles } from './styles';
 
@@ -15,11 +14,7 @@ function BookImage({ imageUrl, style }: Props) {
     ...style
   };
 
-  return imageUrl ? (
-    <Image style={imageStyle} source={{ uri: imageUrl }} />
-  ) : (
-    <View style={imageStyle} />
-  );
+  return imageUrl ? <Image style={imageStyle} source={{ uri: imageUrl }} /> : <View style={imageStyle} />;
 }
 
 export default BookImage;

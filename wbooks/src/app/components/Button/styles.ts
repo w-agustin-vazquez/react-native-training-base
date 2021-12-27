@@ -38,7 +38,7 @@ export const textStyles = StyleSheet.create({
   btnText: {
     fontSize: 15,
     lineHeight: 19,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   [buttonVariants.primary]: {
     color: AppColors.white

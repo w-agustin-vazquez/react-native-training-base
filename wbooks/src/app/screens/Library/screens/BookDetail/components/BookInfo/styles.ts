@@ -5,15 +5,15 @@ export const styles = StyleSheet.create({
   bookInfo: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   data: {
     marginBottom: 20,
-    marginLeft: 20,
+    marginLeft: 20
   },
   image: {
     height: 105,
-    width: 70,
+    width: 70
   },
   status: {
     fontWeight: 'bold',

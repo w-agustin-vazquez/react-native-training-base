@@ -1,10 +1,9 @@
 import React from 'react';
-import { View } from 'react-native';
 import { Route, routeNames } from '@app/components/Router/constants';
+import Layout from '@app/components/Layout';
 // import { COMMENTS_MOCK } from '@constants/mockComments';
 
 import BookInfo from './components/BookInfo';
-import Layout from '@app/components/Layout';
 // import Comments from './components/Comments';
 
 function BookDetail({ route }: Route<routeNames.bookDetail>) {

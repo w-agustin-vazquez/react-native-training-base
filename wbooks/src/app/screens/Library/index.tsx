@@ -1,11 +1,11 @@
 import React from 'react';
-import { FlatList, ListRenderItemInfo, View } from 'react-native';
+import { FlatList, ListRenderItemInfo } from 'react-native';
 import { Route, routeNames } from '@app/components/Router/constants';
 import { BOOKS_MOCK } from '@constants/mockBooks';
 import { IBook } from '@interfaces/book';
+import Layout from '@app/components/Layout';
 
 import Book from './components/Book';
-import Layout from '@app/components/Layout';
 
 function Library({ navigation }: Route<routeNames.library>) {
   const handleRenderItem = ({ item }: ListRenderItemInfo<IBook>) => (
@@ -21,11 +21,7 @@ function Library({ navigation }: Route<routeNames.library>) {
 
   return (
     <Layout>
-      <FlatList
-        data={BOOKS_MOCK}
-        renderItem={handleRenderItem}
-        keyExtractor={handleKeyExtractor}
-      />
+      <FlatList data={BOOKS_MOCK} renderItem={handleRenderItem} keyExtractor={handleKeyExtractor} />
     </Layout>
   );
 }
