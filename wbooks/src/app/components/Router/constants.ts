@@ -1,6 +1,6 @@
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import Library from '@app/screens/Library';
 import BookDetail from '@app/screens/Library/screens/BookDetail';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 export enum routeNames {
   library = 'Library',
