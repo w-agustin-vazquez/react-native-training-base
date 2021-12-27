@@ -26,5 +26,7 @@ export type RootStackParamList = {
   [routeNames.bookDetail]: { book: IBook };
 };
 
-export type Route<RouteName extends keyof RootStackParamList> =
-  NativeStackScreenProps<RootStackParamList, RouteName>;
+export type Route<RouteName extends keyof RootStackParamList> = NativeStackScreenProps<
+  RootStackParamList,
+  RouteName
+>;

@@ -25,11 +25,7 @@ function BookInfo({ book }: Props) {
         <GenericText>{book.genre}</GenericText>
       </View>
       <View>
-        <Button
-          title="ADD TO WISHLIST"
-          handlePress={handleAddWishlist}
-          variant={buttonVariants.secondary}
-        />
+        <Button title="ADD TO WISHLIST" handlePress={handleAddWishlist} variant={buttonVariants.secondary} />
         <Button title="RENT" handlePress={handleRent} />
       </View>
     </View>

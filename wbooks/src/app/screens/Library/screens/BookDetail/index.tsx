@@ -15,7 +15,7 @@ function BookDetail({ route }: Route<routeNames.bookDetail>) {
       {/* TODO: Get comments from API or receive from a top level component */}
       {/* TODO: Add comments component in comments card */}
       {/* <Comments comments={COMMENTS_MOCK} /> */}
-    </View >
+    </View>
   );
 }
 

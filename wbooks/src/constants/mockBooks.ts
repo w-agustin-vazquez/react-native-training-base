@@ -1,4 +1,4 @@
-import { IBook } from "@interfaces/book";
+import { IBook } from '@interfaces/book';
 
 export const BOOKS_MOCK: IBook[] = [
   {

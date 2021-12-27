@@ -1,6 +1,8 @@
 import React, { PropsWithChildren } from 'react';
 import { Pressable, ViewStyle } from 'react-native';
+
 import GenericText from '../GenericText';
+
 import { buttonVariants } from './constants';
 import { styles, textStyles } from './styles';
 
@@ -28,7 +30,7 @@ const Button = ({
   const textStyle = {
     ...textStyles.btnText,
     ...textStyles[variant]
-  }
+  };
   return (
     <Pressable onPress={handlePress} style={buttonStyle} disabled={disabled}>
       {title ? <GenericText style={textStyle}>{title}</GenericText> : children}

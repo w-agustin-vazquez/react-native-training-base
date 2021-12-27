@@ -1,4 +1,4 @@
-import { IComment } from "@interfaces/comment";
+import { IComment } from '@interfaces/comment';
 
 export const COMMENTS_MOCK: IComment[] = [
   {
