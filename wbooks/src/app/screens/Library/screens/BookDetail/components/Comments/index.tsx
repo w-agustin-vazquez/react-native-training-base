@@ -8,6 +8,7 @@ import Comment from '../Comment';
 
 import { styles } from './styles';
 import CommentsFooter from './components/CommentsFooter';
+import { useState } from 'react';
 
 interface Props {
   comments: IComment[];
@@ -16,26 +17,38 @@ interface Props {
 const VISIBLE_COMMENTS = 5;
 
 const Comments = ({ comments }: Props) => {
-  const hasMoreComments = useMemo(() => comments.length > VISIBLE_COMMENTS, [comments]);
-
-  const visibleComments = useMemo(
-    () => comments.slice(Math.max(comments.length - VISIBLE_COMMENTS, 0)),
-    [comments]
+  const [visibleComments, setVisibleComments] = useState(() =>
+    comments.slice(Math.max(comments.length - VISIBLE_COMMENTS, 0))
   );
 
-  const handleRenderItem = ({ item: { author, url, text } }: ListRenderItemInfo<IComment>) => (
+  const hasMoreComments = useMemo(
+    () => comments.length > visibleComments.length,
+    [visibleComments, comments]
+  );
+
+  const handleRenderItem = ({
+    item: { author, url, text }
+  }: ListRenderItemInfo<IComment>) => (
     <Comment author={author} url={url} text={text} />
   );
 
   const handleKeyExtractor = ({ id }: IComment) => id.toString();
 
-  const handleViewAll = () => console.warn('handleViewAll');
+  const handleViewAll = () => {
+    const newComments = comments.filter(
+      ({ id }) => !visibleComments.some(comment => comment.id === id)
+    );
+    setVisibleComments([...visibleComments, ...newComments]);
+  };
 
   return (
     <Card style={styles.comments}>
       <FlatListWrapper
         ListFooterComponent={
-          <CommentsFooter hasMoreComments={hasMoreComments} handleViewAll={handleViewAll} />
+          <CommentsFooter
+            hasMoreComments={hasMoreComments}
+            handleViewAll={handleViewAll}
+          />
         }
         renderItem={handleRenderItem}
         data={visibleComments}
