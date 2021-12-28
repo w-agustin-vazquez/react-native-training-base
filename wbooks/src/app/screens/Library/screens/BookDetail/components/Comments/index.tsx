@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { ListRenderItemInfo } from 'react-native';
 import Card from '@app/components/Card';
 import FlatListWrapper from '@app/components/FlatListWrapper';
@@ -8,7 +8,6 @@ import Comment from '../Comment';
 
 import { styles } from './styles';
 import CommentsFooter from './components/CommentsFooter';
-import { useState } from 'react';
 
 interface Props {
   comments: IComment[];
@@ -26,18 +25,14 @@ const Comments = ({ comments }: Props) => {
     [visibleComments, comments]
   );
 
-  const handleRenderItem = ({
-    item: { author, url, text }
-  }: ListRenderItemInfo<IComment>) => (
+  const handleRenderItem = ({ item: { author, url, text } }: ListRenderItemInfo<IComment>) => (
     <Comment author={author} url={url} text={text} />
   );
 
   const handleKeyExtractor = ({ id }: IComment) => id.toString();
 
   const handleViewAll = () => {
-    const newComments = comments.filter(
-      ({ id }) => !visibleComments.some(comment => comment.id === id)
-    );
+    const newComments = comments.filter(({ id }) => !visibleComments.some(comment => comment.id === id));
     setVisibleComments([...visibleComments, ...newComments]);
   };
 
@@ -45,10 +40,7 @@ const Comments = ({ comments }: Props) => {
     <Card style={styles.comments}>
       <FlatListWrapper
         ListFooterComponent={
-          <CommentsFooter
-            hasMoreComments={hasMoreComments}
-            handleViewAll={handleViewAll}
-          />
+          <CommentsFooter hasMoreComments={hasMoreComments} handleViewAll={handleViewAll} />
         }
         renderItem={handleRenderItem}
         data={visibleComments}
