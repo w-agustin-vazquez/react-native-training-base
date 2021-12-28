@@ -14,9 +14,7 @@ function Library({ navigation }: Route<routeNames.library>) {
       imageUrl={item.imageUrl}
       title={item.title}
       author={item.author}
-      handlePress={() =>
-        navigation.navigate(routeNames.bookDetail, { book: item })
-      }
+      handlePress={() => navigation.navigate(routeNames.bookDetail, { book: item })}
     />
   );
 

@@ -1,8 +1,11 @@
 import React from 'react';
 import GenericText from '@app/components/GenericText';
 import { IComment } from '@interfaces/comment';
-import { Image, View } from 'react-native';
+import { View } from 'react-native';
 import BookImage from '@app/components/BookImage';
+import { textVariants } from '@app/components/GenericText/constants';
+
+import { styles } from './styles';
 
 interface Props {
   author: IComment['author'];
@@ -12,10 +15,14 @@ interface Props {
 
 const Comment = ({ author, url, text }: Props) => {
   return (
-    <View>
-      <BookImage imageUrl={url} style={{ width: 50, height: 50 }} />
-      <GenericText>{author}</GenericText>
-      <GenericText>{text}</GenericText>
+    <View style={styles.comment}>
+      <BookImage imageUrl={url} style={styles.image} />
+      <View style={styles.data}>
+        <GenericText variant={textVariants.h4} style={styles.author}>
+          {author}
+        </GenericText>
+        <GenericText>{text}</GenericText>
+      </View>
     </View>
   );
 };

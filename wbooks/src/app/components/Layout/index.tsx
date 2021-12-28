@@ -9,7 +9,7 @@ function Layout({ children }: PropsWithChildren<{}>) {
     <ScrollView>
       <View style={styles.container}>{children}</View>
     </ScrollView>
-  )
+  );
 }
 
 export default Layout;

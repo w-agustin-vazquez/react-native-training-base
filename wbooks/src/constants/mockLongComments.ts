@@ -50,4 +50,3 @@ export const COMMENTS_MOCK: IComment[] = [
     url: 'https://picsum.photos/300/300'
   }
 ];
-
