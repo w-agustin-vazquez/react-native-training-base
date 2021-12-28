@@ -29,7 +29,7 @@ const Comments = ({ comments }: Props) => {
 
   const handleKeyExtractor = ({ id }: IComment) => id.toString();
 
-  const handleViewAll = () => console.log('handleViewAll');
+  const handleViewAll = () => console.warn('handleViewAll');
 
   return (
     <Card style={styles.comments}>
