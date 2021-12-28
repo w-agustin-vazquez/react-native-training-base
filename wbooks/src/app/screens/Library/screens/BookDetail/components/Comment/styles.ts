@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     paddingTop: 15
   },
   image: {
-    width: '15%',
+    width: 45,
     height: 45,
     borderRadius: 50
   },

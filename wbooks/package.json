@@ -15,8 +15,8 @@
     "lint-fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
     "lint-diff": "git diff --staged --name-only --relative --diff-filter=ACM | grep -E \"\\.(ts|tsx|js|jsx)$\" | xargs eslint",
     "check-types": "tsc",
-    "ios-8": "yarn ios --simulator=\"iPhone 8\"",
-    "ios-se": "yarn ios --simulator=\"iPhone SE (2nd generation)\""
+    "ios-8": "npx react-native run-ios --simulator=\"iPhone 8\"",
+    "ios-se": "npx react-native run-ios --simulator=\"iPhone SE (2nd generation)\""
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.6",
