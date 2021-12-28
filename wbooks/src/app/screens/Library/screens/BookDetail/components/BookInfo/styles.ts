@@ -9,11 +9,12 @@ export const styles = StyleSheet.create({
   },
   data: {
     marginBottom: 20,
-    marginLeft: 20
+    marginLeft: 20,
+    width: '65%'
   },
   image: {
     height: 105,
-    width: 70
+    width: '27%'
   },
   status: {
     fontWeight: 'bold',
