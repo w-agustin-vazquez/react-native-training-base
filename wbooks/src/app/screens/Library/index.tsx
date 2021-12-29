@@ -8,12 +8,14 @@ import Layout from '@app/components/Layout';
 import Book from './components/Book';
 
 function Library({ navigation }: Route<routeNames.library>) {
+  const handleViewDetail = (item: IBook) => navigation.navigate(routeNames.bookDetail, { book: item });
+
   const handleRenderItem = ({ item }: ListRenderItemInfo<IBook>) => (
     <Book
       imageUrl={item.imageUrl}
       title={item.title}
       author={item.author}
-      handlePress={() => navigation.navigate(routeNames.bookDetail, { book: item })}
+      handlePress={() => handleViewDetail(item)}
     />
   );
 
