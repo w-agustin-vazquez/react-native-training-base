@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import { View, Pressable, ViewStyle } from 'react-native';
+import { View, TouchableOpacity, ViewStyle } from 'react-native';
 
 import { styles } from './styles';
 
@@ -9,18 +9,14 @@ interface Props {
 }
 
 const Card = ({ children, handlePress, style }: PropsWithChildren<Props>) => {
-  const Component = handlePress ? Pressable : View;
+  const Component = handlePress ? TouchableOpacity : View;
   const props = handlePress ? { onPress: handlePress } : {};
   const cardStyle = {
     ...styles.card,
     ...style
   };
 
-  return (
-    <Component style={cardStyle} {...props}>
-      {children}
-    </Component>
-  );
+  return React.createElement(Component, { style: cardStyle, ...props }, children);
 };
 
 export default Card;
