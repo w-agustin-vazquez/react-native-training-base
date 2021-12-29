@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import { Pressable, ViewStyle } from 'react-native';
+import { TouchableOpacity, ViewStyle } from 'react-native';
 
 import GenericText from '../GenericText';
 
@@ -32,9 +32,9 @@ const Button = ({
     ...textStyles[variant]
   };
   return (
-    <Pressable onPress={handlePress} style={buttonStyle} disabled={disabled}>
+    <TouchableOpacity onPress={handlePress} style={buttonStyle} disabled={disabled}>
       {title ? <GenericText style={textStyle}>{title}</GenericText> : children}
-    </Pressable>
+    </TouchableOpacity>
   );
 };
 
