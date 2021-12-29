@@ -1,20 +1,7 @@
 import React from 'react';
-import { SafeAreaView, StatusBar } from 'react-native';
 
-import Library from './screens/Library';
+import Router from './components/Router';
 
-const App = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        {/* TODO: ScrollView will be removed? review in Library view card */}
-        {/* <ScrollView contentInsetAdjustmentBehavior="automatic"> */}
-        <Library />
-        {/* </ScrollView> */}
-      </SafeAreaView>
-    </>
-  );
-};
+const App = () => <Router />;
 
 export default App;
