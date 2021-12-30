@@ -13,10 +13,12 @@ export const DEFAULT_MAIN_ROUTE = routeNames.library;
 export const ROUTES = [
   {
     name: routeNames.library,
+    title: 'LIBRARY',
     component: Library
   },
   {
     name: routeNames.bookDetail,
+    title: 'BOOK DETAIL',
     component: BookDetail
   }
 ];
