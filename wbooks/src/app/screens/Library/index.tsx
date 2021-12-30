@@ -1,9 +1,10 @@
 import React from 'react';
-import { FlatList, ListRenderItemInfo } from 'react-native';
+import { ListRenderItemInfo } from 'react-native';
 import { Route, routeNames } from '@app/components/Router/constants';
 import { BOOKS_MOCK } from '@constants/mockBooks';
 import { IBook } from '@interfaces/book';
 import Layout from '@app/components/Layout';
+import FlatListWrapper from '@app/components/FlatListWrapper';
 
 import Book from './components/Book';
 
@@ -23,7 +24,12 @@ function Library({ navigation }: Route<routeNames.library>) {
 
   return (
     <Layout>
-      <FlatList data={BOOKS_MOCK} renderItem={handleRenderItem} keyExtractor={handleKeyExtractor} />
+      <FlatListWrapper
+        data={BOOKS_MOCK}
+        renderItem={handleRenderItem}
+        keyExtractor={handleKeyExtractor}
+        scrollEnabled={false}
+      />
     </Layout>
   );
 }

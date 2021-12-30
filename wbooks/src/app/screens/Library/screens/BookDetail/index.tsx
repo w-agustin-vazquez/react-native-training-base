@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, routeNames } from '@app/components/Router/constants';
 import Layout from '@app/components/Layout';
-// import { COMMENTS_MOCK } from '@constants/mockComments';
+import { COMMENTS_MOCK } from '@constants/mockLongComments';
 
 import BookInfo from './components/BookInfo';
-// import Comments from './components/Comments';
+import Comments from './components/Comments';
 
 function BookDetail({ route }: Route<routeNames.bookDetail>) {
   const { book } = route.params;
@@ -12,9 +12,7 @@ function BookDetail({ route }: Route<routeNames.bookDetail>) {
   return (
     <Layout>
       <BookInfo book={book} />
-      {/* TODO: Get comments from API or receive from a top level component */}
-      {/* TODO: Add comments component in comments card */}
-      {/* <Comments comments={COMMENTS_MOCK} /> */}
+      <Comments comments={COMMENTS_MOCK} />
     </Layout>
   );
 }
