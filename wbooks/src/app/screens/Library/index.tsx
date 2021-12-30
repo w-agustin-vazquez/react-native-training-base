@@ -1,34 +1,30 @@
 import React from 'react';
-import { FlatList, ListRenderItemInfo, View } from 'react-native';
+import { FlatList, ListRenderItemInfo } from 'react-native';
 import { Route, routeNames } from '@app/components/Router/constants';
 import { BOOKS_MOCK } from '@constants/mockBooks';
 import { IBook } from '@interfaces/book';
+import Layout from '@app/components/Layout';
 
 import Book from './components/Book';
-import { styles } from './styles';
 
 function Library({ navigation }: Route<routeNames.library>) {
-  const handleRenderItem = ({ item: { imageUrl, title, author, id } }: ListRenderItemInfo<IBook>) => (
+  const handleViewDetail = (item: IBook) => navigation.navigate(routeNames.bookDetail, { book: item });
+
+  const handleRenderItem = ({ item }: ListRenderItemInfo<IBook>) => (
     <Book
-      imageUrl={imageUrl}
-      title={title}
-      author={author}
-      handlePress={() => navigation.navigate(routeNames.bookDetail, { id })}
+      imageUrl={item.imageUrl}
+      title={item.title}
+      author={item.author}
+      handlePress={() => handleViewDetail(item)}
     />
   );
 
   const handleKeyExtractor = ({ id }: IBook) => id.toString();
 
   return (
-    <View>
-      <FlatList
-        data={BOOKS_MOCK as IBook[]}
-        // TODO: Move this to some layout component in card of library view
-        style={styles.list}
-        renderItem={handleRenderItem}
-        keyExtractor={handleKeyExtractor}
-      />
-    </View>
+    <Layout>
+      <FlatList data={BOOKS_MOCK} renderItem={handleRenderItem} keyExtractor={handleKeyExtractor} />
+    </Layout>
   );
 }
 

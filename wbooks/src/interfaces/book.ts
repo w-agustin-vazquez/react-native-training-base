@@ -3,7 +3,7 @@ export interface IBook {
   author: string;
   title: string;
   genre: string;
-  publisher: 'Butterworth-Heinemann';
+  publisher: string;
   year: string;
   imageUrl: string | null;
 }

@@ -1,11 +1,12 @@
 import React from 'react';
-import { Pressable, View } from 'react-native';
+import { View } from 'react-native';
 import { IBook } from '@interfaces/book';
 import GenericText from '@app/components/GenericText';
 import { textVariants } from '@app/components/GenericText/constants';
+import Card from '@app/components/Card';
+import BookImage from '@app/components/BookImage';
 
 import { styles } from './styles';
-import BookImage from './components/BookImage';
 
 interface Props {
   imageUrl: IBook['imageUrl'];
@@ -16,7 +17,7 @@ interface Props {
 
 function Book({ imageUrl, title, author, handlePress }: Props) {
   return (
-    <Pressable style={styles.book} onPress={handlePress}>
+    <Card style={styles.book} handlePress={handlePress}>
       <BookImage imageUrl={imageUrl} />
       <View style={styles.textContainer}>
         <GenericText variant={textVariants.h3} style={styles.title}>
@@ -24,7 +25,7 @@ function Book({ imageUrl, title, author, handlePress }: Props) {
         </GenericText>
         <GenericText>{author}</GenericText>
       </View>
-    </Pressable>
+    </Card>
   );
 }
 
