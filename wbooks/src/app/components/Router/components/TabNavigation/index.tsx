@@ -1,3 +1,4 @@
+import BookImage from '@app/components/BookImage';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 
@@ -16,7 +17,14 @@ const TabNavigation = ({ routes }: Props) => {
     headerShown: false
   });
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={() => ({
+        tabBarIcon: () => {
+          return <BookImage imageUrl="https://www.svgrepo.com/show/202548/cabbage.svg" />;
+        },
+        tabBarActiveTintColor: 'tomato',
+        tabBarInactiveTintColor: 'gray'
+      })}>
       {routes.map(route => (
         <Tab.Screen key={route.name} name={`TAB${route.name}`} options={screenOptions(route.title)}>
           {() => <InnerNavigation route={route} />}
