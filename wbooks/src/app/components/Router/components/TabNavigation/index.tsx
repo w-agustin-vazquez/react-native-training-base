@@ -1,9 +1,11 @@
-import BookImage from '@app/components/BookImage';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { IRoute } from '../../constants';
 import InnerNavigation from '../InnerNavigation';
+import Icon from '../Icon';
+
+import { handleIconType, handleTabScreenOptions, routeNameBuilder, screenOptions } from './constants';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,21 +14,15 @@ interface Props {
 }
 
 const TabNavigation = ({ routes }: Props) => {
-  const screenOptions = (title: string) => ({
-    title,
-    headerShown: false
-  });
+  const handleTabIcon: handleIconType = (route, focused) => {
+    const icon = routes.find(({ name }) => routeNameBuilder(name) === route.name)?.icon;
+    return <Icon icon={icon} active={focused} />;
+  };
+
   return (
-    <Tab.Navigator
-      screenOptions={() => ({
-        tabBarIcon: () => {
-          return <BookImage imageUrl="https://www.svgrepo.com/show/202548/cabbage.svg" />;
-        },
-        tabBarActiveTintColor: 'tomato',
-        tabBarInactiveTintColor: 'gray'
-      })}>
+    <Tab.Navigator screenOptions={({ route }) => handleTabScreenOptions(route, handleTabIcon)}>
       {routes.map(route => (
-        <Tab.Screen key={route.name} name={`TAB${route.name}`} options={screenOptions(route.title)}>
+        <Tab.Screen key={route.name} name={routeNameBuilder(route.name)} options={screenOptions(route.title)}>
           {() => <InnerNavigation route={route} />}
         </Tab.Screen>
       ))}

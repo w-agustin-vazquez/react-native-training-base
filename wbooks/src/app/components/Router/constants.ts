@@ -1,9 +1,13 @@
+import React from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import Library from '@app/screens/Library';
 import BookDetail from '@app/screens/Library/screens/BookDetail';
 import { IBook } from '@interfaces/book';
 import Wishlist from '@app/screens/Wishlist';
-import React from 'react';
+import { ImageSourcePropType } from 'react-native';
+
+import wishlistIc from '../../assets/img/ic_wishlist.png';
+import libraryIc from '../../assets/img/ic_library.png';
 
 export enum routeNames {
   library = 'Library',
@@ -27,6 +31,7 @@ export const DEFAULT_MAIN_ROUTE = routeNames.library;
 export interface IRoute {
   name: routeNames;
   title: string;
+  icon?: ImageSourcePropType;
   component: React.FunctionComponent<any>;
   subPaths?: IRoute[];
 }
@@ -36,6 +41,7 @@ export const ROUTES: IRoute[] = [
     name: routeNames.library,
     title: 'Library',
     component: Library,
+    icon: libraryIc,
     subPaths: [
       {
         name: routeNames.bookDetail,
@@ -47,6 +53,7 @@ export const ROUTES: IRoute[] = [
   {
     name: routeNames.wishlist,
     title: 'Wishlist',
+    icon: wishlistIc,
     component: Wishlist
   }
 ];
